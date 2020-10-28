@@ -1,7 +1,13 @@
 const { router, route, text } = require('bottender/router')
 
 async function SayHi(context) {
-  await context.sendText('Hi!');
+  const count = context.state.count + 1
+  context.setState({
+    count
+  })
+  await context.sendText(`Hi! ${count}`);
+  await context.sendText(`context.platform: ${context.platform}`);
+  await context.sendText(`session.id: ${context.session.id}`);
 }
 
 async function Unknown(context) {
