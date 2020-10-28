@@ -1,3 +1,14 @@
+async function SayHi(context) {
+  await context.sendText('Hi!');
+}
+
+async function Unknown(context) {
+  await context.sendText('Sorry. I do not understand what you say.');
+}
+
 module.exports = async function App(context) {
-  await context.sendText('Welcome to Bottender');
-};
+  if (context.event.text == 'hi') {
+    return SayHi;
+  }
+  return Unknown;
+}
