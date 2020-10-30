@@ -9,6 +9,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "bottender": "1.4.10",
     "eslint": "7.12.1",
     "eslint-config-prettier": "6.15.0",
