@@ -36,7 +36,7 @@ function getWeather(locationName) {
     return new Promise((resolve, reject) => {
         axios.get(api)
             .then(response => {
-                if(response.data.success) {
+                if (response.data.success) {
                     let Wx = response.data.records.location[0].weatherElement[0].time[0].parameter.parameterName
                     let Pop = response.data.records.location[0].weatherElement[1].time[0].parameter.parameterName
                     let MinT = response.data.records.location[0].weatherElement[2].time[0].parameter.parameterName
@@ -47,7 +47,7 @@ function getWeather(locationName) {
                         'MinT': MinT,
                         'MaxT': MaxT
                     })
-                }else {
+                } else {
                     console.log(error)
                     reject(error)
                 }
