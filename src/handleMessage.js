@@ -7,6 +7,7 @@ module.exports = async function handleMessage(context) {
         text(['hi', 'hello', 'hey'], sayHi),
         text(/^天氣\s([^;]+)$/, handleWeather),
         text('我要查天氣～', sendFlexWeather),
+        text(/我要看PTT～|版|頁/, handlePtt),
         route('*', unknown)
     ])
 };
