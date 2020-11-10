@@ -21,11 +21,6 @@ async function _initialize(options) {
 		await puppeteer.launch(Object.assign({
 			headless: false
 		}, options));
-	if(browser = (this_os === 'linux')) {
-		console.log('@@@@@@linuxlinuxlinuxlinuxlinux')
-	}else {
-		console.log('@@@@@@', this_os)
-	}
 
 	/***** 建立Browser上的 newPage *****/
 	page = await browser.newPage();
