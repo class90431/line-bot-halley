@@ -1,6 +1,7 @@
 const { router, text, route } = require('bottender/router')
 const handleWeather = require('./handleWeather')
 const sendFlexWeather = require('./components/flexWeather')
+const handlePtt = require('./handlePtt')
 
 module.exports = async function handleMessage(context) {
     return router([
