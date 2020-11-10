@@ -1,12 +1,14 @@
 const { router, text, route } = require('bottender/router')
 const handleWeather = require('./handleWeather')
 const sendFlexWeather = require('./components/flexWeather')
+const handlePtt = require('./handlePtt')
 
 module.exports = async function handleMessage(context) {
     return router([
         text(['hi', 'hello', 'hey'], sayHi),
         text(/^天氣\s([^;]+)$/, handleWeather),
         text('我要查天氣～', sendFlexWeather),
+        text(/我要看PTT～|版|頁/, handlePtt),
         route('*', unknown)
     ])
 };
