@@ -1,5 +1,7 @@
 let boards = [
-    'Beauty', 'iOS', 'NBA', 'Lifeismoney'
+    'Gossiping', 'Beauty', 'iOS',
+    'NBA', 'Lifeismoney', 'Tech_Job',
+    'movie', 'PlayStation'
 ]
 
 module.exports = boards
