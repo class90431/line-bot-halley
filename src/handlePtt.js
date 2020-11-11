@@ -1,6 +1,5 @@
 const boards = require('./static/ptt_boards')
-// const ptt_crawler = require('@waynechang65/ptt-crawler')
-const ptt_crawler = require('./plugins/ptt_crawler')
+const ptt_crawler = require('@waynechang65/ptt-crawler')
 
 let board
 async function handlePtt(context) {
