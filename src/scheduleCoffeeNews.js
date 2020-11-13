@@ -44,8 +44,11 @@ async function sendNotify(resultArray) {
             this.stickerId = stickerId
         }
     }
-    let payload = new Payload('今天有關於咖啡的優惠喔！', '1', '407')
-    resultArray.length === 0 ? payload = new Payload('Nothing...', '1', '126') : payload = payload
+    let payload = new Payload('Nothing...！', '1', '126')
+    if (resultArray.length !== 0) {
+        payload = new Payload('今天有關於咖啡的優惠喔！', '1', '407')
+        payload.message = resultArray.urls.join('|')
+    }
     return await axios.post(url, querystring.encode(payload), { headers })
 }
 
