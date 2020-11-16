@@ -52,12 +52,12 @@ async function sendNotify(resultArray) {
     return await axios.post(url, querystring.encode(payload), { headers })
 }
 
-module.exports = function scheduleCoffeeNews() {
+module.exports = async function scheduleCoffeeNews() {
     setInterval(() => {
         const now = new Date()
         if (now.getHours() === 7 && now.getMinutes() === 0) {
             const date = `${(now.getMonth() + 1).toString()}/${now.getDate().toString()}`
-            let resultArray = crawlerKeyWord(date)
+            let resultArray = await crawlerKeyWord(date)
             sendNotify(resultArray)
         }
     }, 1000 * 60)
