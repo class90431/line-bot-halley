@@ -47,7 +47,7 @@ async function sendNotify(resultArray) {
     let payload = new Payload('Nothing...！', '1', '126')
     if (resultArray.length !== 0) {
         payload = new Payload('今天有關於咖啡的優惠喔！', '1', '407')
-        payload.message = resultArray.urls.join('|')
+        payload.message = resultArray.map(item => item.urls).join(' ')
     }
     return await axios.post(url, querystring.encode(payload), { headers })
 }
