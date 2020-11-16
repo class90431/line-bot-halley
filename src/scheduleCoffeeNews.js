@@ -51,8 +51,8 @@ async function sendNotify(resultArray) {
     }
     await axios.post(url, querystring.encode(payload), { headers })
 }
-module.exports = async function scheduleCoffeeNews() {
-    setInterval(() => {
+module.exports = function scheduleCoffeeNews() {
+    setInterval(async () => {
         const now = new Date()
         if (now.getHours() === 7 && now.getMinutes() === 0) {
             const date = `${(now.getMonth() + 1).toString()}/${now.getDate().toString()}`
