@@ -49,9 +49,8 @@ async function sendNotify(resultArray) {
         payload = new Payload('今天有關於咖啡的優惠喔！', '1', '407')
         payload.message = resultArray.map(item => item.urls).join(' ')
     }
-    return await axios.post(url, querystring.encode(payload), { headers })
+    await axios.post(url, querystring.encode(payload), { headers })
 }
-
 module.exports = async function scheduleCoffeeNews() {
     setInterval(() => {
         const now = new Date()
