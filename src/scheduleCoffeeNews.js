@@ -47,17 +47,16 @@ async function sendNotify(resultArray) {
     let payload = new Payload('Nothing...！', '1', '126')
     if (resultArray.length !== 0) {
         payload = new Payload('今天有關於咖啡的優惠喔！', '1', '407')
-        payload.message = resultArray.urls.join('|')
+        payload.message = resultArray.map(item => item.urls).join(' ')
     }
-    return await axios.post(url, querystring.encode(payload), { headers })
+    await axios.post(url, querystring.encode(payload), { headers })
 }
-
 module.exports = function scheduleCoffeeNews() {
-    setInterval(() => {
+    setInterval(async () => {
         const now = new Date()
         if (now.getHours() === 7 && now.getMinutes() === 0) {
             const date = `${(now.getMonth() + 1).toString()}/${now.getDate().toString()}`
-            let resultArray = crawlerKeyWord(date)
+            let resultArray = await crawlerKeyWord(date)
             sendNotify(resultArray)
         }
     }, 1000 * 60)
