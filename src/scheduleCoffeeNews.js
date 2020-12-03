@@ -55,11 +55,14 @@ module.exports = function scheduleCoffeeNews() {
     setInterval(async () => {
         const now = new Date()
         if (now.getHours() === 7 && now.getMinutes() === 0) {
-            // const today = `${(now.getMonth() + 1).toString()}/${now.getDate().toString()}`
-            const yesterday = `${(now.getMonth() + 1).toString()}/${(now.getDate() - 1).toString()}`
-            let resultArray = await crawlerKeyWord(yesterday)
-            sendNotify(resultArray)
+            const date = ('0' + (now.getDate() - 1).toString()).substr(-2)
+            try {
+                const yesterday = `${(now.getMonth() + 1).toString()}/${date}`
+                let resultArray = await crawlerKeyWord(yesterday)
+                await sendNotify(resultArray)
+            } catch (error) {
+                console.log(error)
+            }
         }
     }, 1000 * 60)
-
 }
