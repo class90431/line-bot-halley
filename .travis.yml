@@ -5,3 +5,11 @@ install:
     - npm install
 script:
     - npm test
+deploy:
+  - provider: heroku
+    api_key:
+      secure: $HEROKU_AUTH_TOKEN
+    app: line-bot-halley
+    on:
+      branch: main
+      
