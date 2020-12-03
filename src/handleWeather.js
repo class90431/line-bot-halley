@@ -34,4 +34,5 @@ function getWeather(locationName) {
     })
 }
 
-module.exports = handleWeather
+// module.exports = handleWeather
+module.exports = {handleWeather, getWeather}
