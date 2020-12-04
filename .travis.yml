@@ -1,15 +1,14 @@
 language: node_js
 node_js:
-  - "12"
+- '12.18.4'
 install:
-    - npm install
+- npm install
 script:
-    - npm test
+- npm test
 deploy:
-  - provider: heroku
-    api_key:
-      secure: $HEROKU_AUTH_TOKEN
-    app: line-bot-halley
-    on:
-      branch: main
-      
+  provider: heroku
+  api_key:
+    secure: msUza2LrC8P7oMM6nK9DhdGIl2arlfr2Xsx4jq92RrWD85Wm5nuKk5PjteYHeT27eMuCRlCW30xPq39xBFCG5dBjG42RTvkZ+gPNWmDy6DA87I6wEmMyxxkAGg1Q/kRmiu9kuSkXO9wpD00S7rc9Xmb0QN8fqdCqmmeZlsQ3dxgNEfyV8pRLwJovIQ8MvpPxtkkvSDwvj/6gn3+mOB3ITNRHiSLbz+9iiEH1UzcDQ7QiGNpYxkCjk4UdW6Cqx6KdS39ZcsV3PpiNIbO8z04xIpvPUOo5gfs7UvfPMre8ldRuMNcCWA6FGIPlvB6AwtMxdhotX3eVwkGvFAas3s6uc5tpRghpQsedO8PLzQTYBfvDkHbRfej6gHN+1QmryBtTuczTLUlmD7bJ5aEQatXPC2Leaw2XsxP5Xd5XjXw/hD6DG7pHstLaOMIiWjuffIhnV5RK/qzpJ6vioRweI29YD8hy7+PcZoi/reWhGj8DCZ2XAHHLBlfk7N3tEGK5osHVP164GmzP/q9/sSvK72m4JjVfBcv8unQwIbShOc30Cu1UAAlKRsPTcecjWKrgga1gYXsCAmhOZQb/Xn1IOeIxYEqeU3boP4IDWUkUpgML7MND/JT/QYZv5Di+QDQsQgm15kaexV9NYwpzY6niACgQr6KPo4BYcDqjRDlXlBpsm4I=
+  app: line-bot-halley
+  on:
+    branch: main
