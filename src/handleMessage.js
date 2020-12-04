@@ -24,6 +24,6 @@ async function sayHi(context) {
 };
 
 async function unknown(context) {
-    await context.sendText(`不要吵我～ ${context.event.text}`);
+    await context.sendText(`不要吵我！！！`);
 };
 
