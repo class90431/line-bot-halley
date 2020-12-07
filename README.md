@@ -58,3 +58,4 @@
 #### 哈哈雷有出貼圖喔！如有興趣，可以前往以下連結逛逛～
 - [我是哈雷不是哈登](https://store.line.me/stickershop/product/12319569/zh-Hant)
 - [我是哈雷不是哈登 2 米哥一起過聖誕](https://store.line.me/stickershop/product/13745533/zh-Hant?from=sticker)
+![](./src/img/ForReadME/halley_fight.png)
