@@ -1,62 +1,43 @@
-This project was bootstrapped with
-[Bottender](https://github.com/Yoctol/bottender) init script.
+<style>
+img{
+    width: 60%;
+    padding-left: 20%;
+}
+</style>
+# 哈哈雷聊天機器人: `天氣` & `PTT 文章` 
+## QR code
+![](./src/img/ForReadME/QRcode.png)
+## 預設
+#### 成功將 哈哈雷 加為好友，你/妳會先被兇一波 ...
+![](./src/img/ForReadME/followMessage.jpg)
+#### 哈哈雷 共有 3 個選項（ RichMenu）可以點擊
+![](./src/img/ForReadME/init.jpg)
 
-## Sending Feedback
+## 功能介紹
+#### 一、查詢台灣各縣市天氣資訊  
+- 點擊最左邊的選單，會自動出現 “我要查天氣～”
+![](./src/img/ForReadME/weather_option.jpg)
+- 哈哈雷會自動回傳: 台灣北、中、南、東區以及離島之各縣市（ flexMessage ）
+![](./src/img/ForReadME/weather_option2.jpg)
+- 假設點擊 “新北市”， 哈哈雷會回傳：
+![](./src/img/ForReadME/weather_result.jpg)
 
-Always feel free to open an issue to
-[Bottender](https://github.com/Yoctol/bottender/issues) repository.
 
-## Configuration
+#### 二、爬特定 PTT 版，並回傳文章標題
+- 特定版：`Gossiping`、 `Beauty`、 `iOS`、 `NBA`、 `Lifeismoney`、 `Tech_Job`、 `movie`、 `PlayStation`
+- 點擊最右邊的選單，會自動出現 "我要看PTT～"
+![](./src/img/ForReadME/ptt_board.jpg)
+- 哈哈雷會問你/妳想看什麼版
+![](./src/img/ForReadME/ptt_board2.jpg)
+- 假設點擊 “Lifeismoney版”，哈哈雷會耐心的詢問要看前幾頁～
+![](./src/img/ForReadME/ptt_page.jpg)
+- 選擇 "前三頁"， 哈哈雷會回傳文章標題（超連結），而且會<font color="red">依據推文數改變標題顏色喔！</font>
+![](./src/img/ForReadME/ptt_result.jpg)
 
-### The `bottender.config.js` File
-
-Bottender configuration file. You can use this file to provide settings for the session store and channels.
-
-### The `.env` File
-
-Bottender utilizes the [dotenv](https://www.npmjs.com/package/dotenv) package to load your environment variables when developing your app.
-
-To make the bot work, you must put required environment variables into your `.env` file.
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm run dev`
-
-Runs the app in development mode.<br>
-The bot will automatically reload if you make changes to the code.<br>
-By default, server runs on [http://localhost:5000](http://localhost:5000) and ngrok runs on [http://localhost:4040](http://localhost:4040).
-
-To run in [Console Mode](https://bottender.js.org/docs/en/the-basics-console-mode), provide the `--console` option:
-
-```sh
-npm run dev -- --console
-yarn dev --console
-```
-
-### `npm start`
-
-Runs the app in production mode.<br>
-By default, server runs on [http://localhost:5000](http://localhost:5000).
-
-To run in [Console Mode](https://bottender.js.org/docs/en/the-basics-console-mode), provide the `--console` option:
-
-```sh
-npm start -- --console
-yarn start --console
-```
-
-### `npm run lint`
-
-Runs the linter rules using [Eslint](https://eslint.org/).
-
-### `npm test`
-
-Runs the test cases using [Jest](https://jestjs.io/).
-
-## Learn More
-
-To learn Bottender, check out the [Bottender documentation](https://bottender.js.org/docs/en/getting-started).
-
-For more examples, see [Bottender examples](https://github.com/Yoctol/bottender/tree/master/examples).
+#### 三、每日 7 點，通知是否有 `關於咖啡的優惠`
+- 礙於 Line Bot 主動發訊息有流量限制，所以結合 `Line Notify` 。
+- 每天早上 7 點，爬“Lifeismoney版”。
+    - 若標題含有“咖啡” 且 發文時間為昨日。則：
+    ![](./src/img/ForReadME/line_notify_yes.png)
+        否則：
+        ![](./src/img/ForReadME/line_notify_no.png)
