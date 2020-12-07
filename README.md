@@ -4,7 +4,7 @@ img{
     padding-left: 20%;
 }
 </style>
-# 哈哈雷聊天機器人: `天氣` & `PTT 文章` 
+# 哈哈雷聊天機器人: `天氣` & `PTT` 
 ## QR code
 ![](./src/img/ForReadME/QRcode.png)
 ## 預設
@@ -41,3 +41,8 @@ img{
     ![](./src/img/ForReadME/line_notify_yes.png)
         否則：
         ![](./src/img/ForReadME/line_notify_no.png)
+
+## 趁機打個廣告
+#### 哈哈雷有出貼圖喔！如有興趣，可以前往以下連結逛逛～
+- [我是哈雷不是哈登](https://store.line.me/stickershop/product/12319569/zh-Hant)
+- [我是哈雷不是哈登 2 米哥一起過聖誕](https://store.line.me/stickershop/product/13745533/zh-Hant?from=sticker)
